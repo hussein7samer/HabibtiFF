@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            cursor: url('https://cdn-icons-png.flaticon.com/512/1077/1077035.png'), auto;
+        }
+        .navbar {
+            background-color: #ff9999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            color: #ff4d4d;
+            animation: fadeIn 2s;
+        }
+        .hero p {
+            font-style: italic;
+            color: #cc0000;
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .gallery img {
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 5px solid #ff9999;
+            animation: pulse 5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .custom-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .custom-btn:hover {
+            background-color: #e60000;
+            transform: scale(1.1);
+        }
+        .romantic-quote {
+            background: linear-gradient(to right, #ff9999, #ff4d4d);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            animation: fadeIn 2s;
+        }
+        footer {
+            background-color: #ff9999;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+        }
+        .sparkling-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .sparkling-stars div {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 4s linear infinite;
+            opacity: 0.8;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0.5) translateY(100px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.2) translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="./img/Mia & Sebastians Theme.mp3" loop></audio>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">For My Love</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#memories">Memories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#playlist">Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#romance">Romantic Words</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>To My Dearest ❤️</h1>
+        <p>"You are my sunshine on every cloudy day."</p>
+        <button class="custom-btn" onclick="showMessage()">Click for a Surprise!</button>
+        <p id="surprise-message" style="display:none; margin-top: 20px; color: #e60000; font-weight: bold;">I love you more than words can say! ❤️</p>
+        <button class="custom-btn mt-3" onclick="playMusic()">Play Music 🎵</button>
+    </section>
+
+    <div class="sparkling-stars">
+        <div style="left: 20%; animation-delay: 0s;"></div>
+        <div style="left: 50%; animation-delay: 1s;"></div>
+        <div style="left: 70%; animation-delay: 2s;"></div>
+        <div style="left: 90%; animation-delay: 3s;"></div>
+    </div>
+
+    <section id="memories" class="container my-5">
+        <h2 class="text-center mb-4">Our Beautiful Memories</h2>
+        <div class="row gallery">
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_2_2025-01-04_21-44-06.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_1_2025-01-04_21-44-06.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_1_2025-01-04_21-42-38.jpg" alt="Memory 3" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_2_2025-01-04_21-42-38.jpg" alt="Memory 4" class="img-fluid">
+            </div>
+
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_4_2025-01-04_21-42-38.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_5_2025-01-04_21-42-38.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+            
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_6_2025-01-04_21-42-38.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_7_2025-01-04_21-42-38.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_8_2025-01-04_21-42-38.jpg" alt="Memory 3" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_9_2025-01-04_21-42-38.jpg" alt="Memory 4" class="img-fluid">
+            </div>
+
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_10_2025-01-04_21-42-38.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_1_2025-01-04_05-20-56.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_12_2025-01-04_21-42-38.jpg" alt="Memory 3" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_13_2025-01-04_21-42-38.jpg" alt="Memory 4" class="img-fluid">
+            </div>
+
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_14_2025-01-04_21-42-38.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_2_2025-01-04_05-20-56.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_11_2025-01-04_21-42-38.jpg" alt="Memory 3" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_15_2025-01-04_21-42-38.jpg" alt="Memory 4" class="img-fluid">
+            </div>
+
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_3_2025-01-04_05-20-56.jpg" alt="Memory 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <img src="./img/photo_2025-01-04_22-43-02.jpg" alt="Memory 2" class="img-fluid">
+            </div>
+
+
+        
+        
+        </div>
+    </section>
+
+    <section id="playlist" class="container my-5">
+        <h2 class="text-center mb-4">Our Playlist</h2>
+        <div class="text-center">
+            <iframe src="https://open.spotify.com/embed/playlist/4KVYoq1QwdKWuK7P88ijsO?si=d813c623d68942b9" width="500" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </section>
+
+    <section id="romance" class="container my-5">
+        <div class="romantic-quote">
+            Every day with you feels like a gift I don’t deserve. You’ve shown me what true love means
+        </div>
+        <div class="romantic-quote">
+            Sweet child o' mine, her hair reminds me of a warm safe place where as a child I'd hide
+        </div>
+        <div class="romantic-quote">
+            I’m gonna love you 'til the heavens stop the rain
+        </div>
+
+        <div class="romantic-quote">
+            وأنا صوتك لو ما فيش صوت، وأنا حظك لو مالكش نصيب
+        </div>
+
+        <div class="romantic-quote">
+            دخيلك خبيني بعيونك، خليني أحس الدفا فيك
+        </div>
+
+        <div class="romantic-quote">
+            إنتِ نور الشمس في ظلامي، وجه القمر اللي يطفي وحدتي.
+        </div>
+
+        <div class="romantic-quote">
+            You’re my high when I’m low, you’re my sunshine through rain
+        </div>
+        <div class="romantic-quote"> I miss you so much, it’s hard to breathe when you’re not around</div>
+    
+    <div class="romantic-quote">I just want to be the one you need</div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Hussein Samer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const music = document.getElementById('background-music');
+
+        function showMessage() {
+            document.getElementById('surprise-message').style.display = 'block';
+        }
+
+        function playMusic() {
+            music.play();
+        }
+
+    </script>
+</body>
+</html>
